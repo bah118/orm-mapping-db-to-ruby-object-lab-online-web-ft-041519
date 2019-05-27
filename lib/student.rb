@@ -68,7 +68,7 @@ class Student
       FROM students
       WHERE grade = 9 
     SQL
-    
+    binding.pry
     DB[:conn].execute(sql)
   end
   
@@ -78,7 +78,7 @@ class Student
       FROM students
       WHERE grade <= 11
     SQL
-    binding.pry
+    
     DB[:conn].execute(sql)
   end
   
