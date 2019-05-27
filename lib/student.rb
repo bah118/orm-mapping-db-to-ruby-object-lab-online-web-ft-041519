@@ -99,12 +99,12 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
-      ORDER BY grade
       LIMIT 1 
     SQL
     
-    DB[:conn].execute(sql).map do |row|
-      self.new_from_db(row)
+    DB[:conn].execute(sql).self.new_from_db
+    # .map do |row|
+    #   self.new_from_db(row)
     end
   end
   
