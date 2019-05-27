@@ -68,7 +68,7 @@ class Student
       FROM students
       WHERE grade = 9 
     SQL
-    binding.pry
+
     DB[:conn].execute(sql)
   end
   
@@ -79,7 +79,9 @@ class Student
       WHERE grade <= 11
     SQL
     
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, name).map do |row|
+      self.new_from_db(row)
+    end.first
   end
   
   def self.first_X_students_in_grade_10(num)
