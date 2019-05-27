@@ -99,7 +99,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      GROUP BY grade
+      ORDER BY grade
       WHERE grade = 10
       LIMIT 1 
     SQL
